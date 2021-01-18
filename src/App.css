@@ -1,0 +1,56 @@
+/*/////////////////*/
+/*/     Font      /*/
+/*/////////////////*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap");
+
+/*////////////////////*/
+/*/     General      /*/
+/*////////////////////*/
+html {
+	font-family: "Montserrat", sans-serif;
+	font-size: 100%;
+}
+a {
+	text-decoration: none;
+}
+a:visited {
+	color: black;
+}
+
+/*///////////////////*/
+/*/     WebApp      /*/
+/*///////////////////*/
+
+.container {
+	display: flex;
+}
+/* Menu */
+.menu {
+	width: 150px;
+	height: calc(100vh - 60px);
+	padding: 30px;
+	background-color: #f2f2f3;
+	display: flex;
+	flex-direction: column;
+}
+
+.menu img {
+	width: 100%;
+}
+
+div.menu > a {
+	margin-bottom: 100px;
+}
+
+.menu nav a {
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+
+/* Content */
+.content {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
