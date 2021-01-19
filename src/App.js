@@ -2,7 +2,7 @@ import "./App.css";
 // Navigation
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 // Containers
-import Home from "./containers/Home";
+import About from "./containers/About";
 import Works from "./containers/Works";
 import Contact from "./containers/Contact";
 // Image
@@ -19,7 +19,7 @@ function App() {
 					<nav>
 						<ul>
 							<li>
-								<Link to="/">Home</Link>
+								<Link to="/">About</Link>
 							</li>
 							<li>
 								<Link to="/works">Works</Link>
@@ -39,7 +39,7 @@ function App() {
 							<Contact />
 						</Route>
 						<Route path="/">
-							<Home />
+							<About />
 						</Route>
 					</Switch>
 				</div>
