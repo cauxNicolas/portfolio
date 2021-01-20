@@ -6,24 +6,24 @@ const Contact = () => {
 			<div id="formulaire" className="effect">
 				<h1>Un projet à réaliser ?</h1>
 				<p className="mb-2">
-					Vous souhaitez développer une idée ? réaliser un parcours
-					design UI UX ? ou tout simplement refaire le branding d'une
-					charte ? N'hesitez pas à remplir le formulaire. Je vous
-					répondrai
+					Vous souhaitez développer une projet ? Réaliser un parcours
+					design UI UX ? Refonte d'une charte ? N'hesitez pas à
+					remplir le formulaire. Je vous répondrai.
 				</p>
+
 				<form>
 					<div className="d-flex space-between">
 						<div className="input-flex">
 							<label>Nom</label>
-							<input placeholder="Nom" />
+							<input placeholder="Nom" type="text" />
 						</div>
 						<div className="input-flex">
 							<label>Prénom</label>
-							<input placeholder="Prénom" />
+							<input placeholder="Prénom" type="text" />
 						</div>
 					</div>
 					<label>Email</label>
-					<input placeholder="Email" />
+					<input placeholder="Email" type="text" />
 					<label>Votre projet</label>
 					<textarea
 						rows="5"

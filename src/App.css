@@ -43,11 +43,6 @@ h1 {
 .mb-1 {
 	margin-bottom: 1rem;
 }
-.effect {
-	opacity: 0;
-	transition-duration: 5s;
-	opacity: 1;
-}
 /*///////////////////*/
 /*/      Menu       /*/
 /*///////////////////*/
@@ -92,6 +87,7 @@ div.menu > a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
 }
 
 .black {
@@ -105,11 +101,13 @@ div.menu > a {
 /*/     Page Contact      /*/
 /*/////////////////////////*/
 #formulaire {
-	width: 350px;
+	width: 500px;
+	padding: 20px;
 }
 
 #formulaire > p {
 	font-size: 0.9rem;
+	line-height: 1.2rem;
 	color: grey;
 }
 
@@ -153,4 +151,17 @@ form .input-flex {
 	display: flex;
 	flex-direction: column;
 	width: 45%;
+}
+
+/* Responsive formulaire */
+@media screen and (max-width: 760px) {
+	#formulaire {
+		width: 90%;
+	}
+	form .input-flex {
+		width: 100%;
+	}
+	.space-between {
+		flex-direction: column;
+	}
 }
