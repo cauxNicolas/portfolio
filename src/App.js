@@ -8,6 +8,9 @@ import Works from "./containers/Works";
 import Contact from "./containers/Contact";
 // Image
 import Logo from "./img/nicaux.svg";
+import LogoSticky from "./img/nicaux-sticky.svg";
+// Components
+import BurgerMenu from "./components/BurgerMenu";
 
 function App() {
 	return (
@@ -31,8 +34,16 @@ function App() {
 						</ul>
 					</nav>
 				</div>
+				{/* sticky-menu */}
 				<div className="sticky-menu">
-					<div>menu sticky</div>
+					<div>
+						<a href="/">
+							<img src={LogoSticky} alt="logo nicolas caux" />
+						</a>
+					</div>
+					<div id="burger">
+						<BurgerMenu />
+					</div>
 				</div>
 				<div className="content">
 					<Switch>
