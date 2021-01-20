@@ -20,10 +20,10 @@ function App() {
 					<nav>
 						<ul>
 							<li>
-								<Link to="/">About</Link>
+								<Link to="/">Works</Link>
 							</li>
 							<li>
-								<Link to="/works">Works</Link>
+								<Link to="/about">About</Link>
 							</li>
 							<li>
 								<Link to="/contact">Contact</Link>
@@ -33,14 +33,14 @@ function App() {
 				</div>
 				<div className="content">
 					<Switch>
-						<Route path="/works">
-							<Works />
+						<Route path="/about">
+							<About />
 						</Route>
 						<Route path="/contact">
 							<Contact />
 						</Route>
 						<Route path="/">
-							<About />
+							<Works />
 						</Route>
 					</Switch>
 				</div>
