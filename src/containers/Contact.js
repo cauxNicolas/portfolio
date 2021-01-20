@@ -6,9 +6,10 @@ const Contact = () => {
 			<div id="formulaire" className="effect">
 				<h1>Un projet à réaliser ?</h1>
 				<p className="mb-2">
-					Vous souhaitez développer une projet ? Réaliser un parcours
-					design UI UX ? Refonte d'une charte ? N'hesitez pas à
-					remplir le formulaire. Je vous répondrai.
+					Vous souhaitez réaliser un projet webApp ou une application
+					mobile ? Réaliser un parcours design UI UX ? Refonte d'une
+					charte ? N'hesitez pas à remplir le formulaire. Je vous
+					répondrai.
 				</p>
 
 				<form>

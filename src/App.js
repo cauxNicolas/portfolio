@@ -31,6 +31,9 @@ function App() {
 						</ul>
 					</nav>
 				</div>
+				<div className="sticky-menu">
+					<div>menu sticky</div>
+				</div>
 				<div className="content">
 					<Switch>
 						<Route path="/about">
