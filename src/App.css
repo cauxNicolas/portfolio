@@ -1,11 +1,11 @@
-/*/////////////////*/
-/*/     Font      /*/
-/*/////////////////*/
+/*-------------------------------*\
+     Font     
+\*-------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap");
 
-/*////////////////////*/
-/*/     General      /*/
-/*////////////////////*/
+/*-------------------------------*\
+     General     
+\*-------------------------------*/
 /* Color */
 :root {
 	--gris-menu: #f2f2f3;
@@ -47,9 +47,14 @@ h1 {
 .mb-1 {
 	margin-bottom: 1rem;
 }
-/*///////////////////*/
-/*/      Menu       /*/
-/*///////////////////*/
+
+.none {
+	display: none;
+}
+
+/*-------------------------------*\
+     Menu     
+\*-------------------------------*/
 .sticky-menu {
 	display: none;
 }
@@ -65,7 +70,7 @@ h1 {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	box-shadow: 5px 0 10px rgba(187, 187, 187, 0.596);
+	/* box-shadow: 5px 0 10px rgba(187, 187, 187, 0.596); */
 }
 
 .menu img {
@@ -105,12 +110,12 @@ div.menu > a {
 	color: grey;
 }
 
-/*/////////////////////////*/
-/*/     Page Contact      /*/
-/*/////////////////////////*/
+/*-------------------------------*\
+     Page COntact     
+\*-------------------------------*/
 #formulaire {
 	width: 500px;
-	padding: 20px;
+	margin: 20px;
 }
 
 #formulaire > p {
@@ -153,6 +158,7 @@ input[type="submit"] {
 	background: linear-gradient(150deg, #50bddf, #24285c, #b45397);
 	text-transform: uppercase;
 	font-weight: 700;
+	padding: 15px;
 }
 
 form .input-flex {
@@ -176,11 +182,9 @@ form .input-flex {
 		box-sizing: border-box;
 		background-color: var(--gris-menu);
 		position: fixed;
-
 		padding: 10px 20px;
 		z-index: 1000;
 		width: 100%;
-		box-shadow: 0 5px 10px rgba(187, 187, 187, 0.596);
 	}
 	.sticky-menu > div {
 		display: flex;
@@ -209,9 +213,9 @@ form .input-flex {
 	}
 }
 
-/*//////////////////////////*/
-/*/     Burger Custom      /*/
-/*//////////////////////////*/
+/*-------------------------------*\
+     Burger Custom      
+\*-------------------------------*/
 .container-burger {
 	display: inline-block;
 	cursor: pointer;
@@ -239,4 +243,80 @@ form .input-flex {
 .change .bar3 {
 	-webkit-transform: rotate(45deg) translate(-7px, -7px);
 	transform: rotate(45deg) translate(-7px, -7px);
+}
+
+/*-------------------------------*\
+     Sticky Menu     
+\*-------------------------------*/
+@media screen and (min-width: 760px) {
+	.sticky-invisible {
+		display: none;
+	}
+}
+@media screen and (max-width: 760px) {
+	.sticky-menu-content {
+		background-color: rgba(0, 0, 0, 0.747);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		padding-top: 60px;
+		box-sizing: border-box;
+		overflow: hidden;
+		opacity: 1;
+		transition: 0.4s;
+	}
+
+	.sticky-menu-content nav {
+		background-color: var(--gris-menu);
+		width: 150px;
+		height: calc(100% - 60px);
+		right: 0px;
+		position: absolute;
+		display: flex;
+		padding-top: 100px;
+		justify-content: center;
+		transition: 0.4s;
+	}
+
+	.sticky-menu-content nav li {
+		font-size: 1rem;
+		line-height: 2rem;
+		text-transform: uppercase;
+		color: grey;
+		text-align: right;
+		transition: 0.4s;
+	}
+
+	.sticky-invisible {
+		background-color: rgba(0, 0, 0, 0.747);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		padding-top: 60px;
+		box-sizing: border-box;
+		overflow: hidden;
+		opacity: 0;
+		transition: 0.4s;
+	}
+
+	.sticky-invisible nav {
+		background-color: var(--gris-menu);
+		width: 150px;
+		height: calc(100% - 60px);
+		right: -150px;
+		position: absolute;
+		display: flex;
+		padding-top: 100px;
+		justify-content: center;
+		transition: 0.4s;
+	}
+
+	.sticky-invisible nav li {
+		font-size: 1rem;
+		line-height: 2rem;
+		text-transform: uppercase;
+		color: grey;
+		text-align: right;
+		transition: 0.4s;
+	}
 }

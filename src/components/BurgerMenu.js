@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
-const BurgerMenu = () => {
-	const [burgerChange, setburgerChange] = useState(true);
-
+const BurgerMenu = ({ burgerChange, setburgerChange }) => {
 	const burgerMenuChange = () => {
 		setburgerChange(!burgerChange);
 	};
