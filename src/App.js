@@ -22,6 +22,10 @@ function App() {
 			<div className="container">
 				<Menu />
 				{/* sticky-menu */}
+				<StickyMenu
+					burgerChange={burgerChange}
+					setburgerChange={setburgerChange}
+				/>
 				<div className="sticky-menu">
 					<div>
 						<a href="/">
@@ -48,7 +52,6 @@ function App() {
 						</Route>
 					</Switch>
 				</div>
-				<StickyMenu burgerChange={burgerChange} />
 			</div>
 		</Router>
 	);
