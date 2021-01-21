@@ -176,6 +176,9 @@ form .input-flex {
 	.content {
 		margin-top: 70px;
 		height: calc(100vh - 70px);
+		/* height: 100%; */
+		overflow: hidden;
+		overflow-y: scroll;
 	}
 	/* Sticky-menu */
 	.sticky-menu {
@@ -256,7 +259,7 @@ form .input-flex {
 }
 @media screen and (max-width: 760px) {
 	.sticky-menu-content {
-		background-color: rgba(0, 0, 0, 0.747);
+		background-color: rgba(109, 109, 109, 0.507);
 		position: absolute;
 		width: 100%;
 		height: 100%;
@@ -290,7 +293,6 @@ form .input-flex {
 	}
 
 	.sticky-invisible {
-		/* background-color: rgba(0, 0, 0, 0.747); */
 		position: absolute;
 		width: 100%;
 		height: 100%;
@@ -299,7 +301,8 @@ form .input-flex {
 		overflow: hidden;
 		opacity: 0;
 		transition: 0.4s;
-		display: flex;
+		/* background-color: red; */
+		left: -900px;
 		/* display: none; */
 	}
 
