@@ -253,6 +253,9 @@ form .input-flex {
      Sticky Menu     
 \*-------------------------------*/
 @media screen and (min-width: 760px) {
+	.sticky-menu-content {
+		display: none;
+	}
 	.sticky-invisible {
 		display: none;
 	}
