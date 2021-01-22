@@ -292,6 +292,10 @@ form .input-flex {
 		transition: 0.4s;
 	}
 
+	.sticky-menu-content nav i a {
+		color: inherit;
+	}
+
 	.sticky-invisible {
 		position: absolute;
 		width: 100%;
