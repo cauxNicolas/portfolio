@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+// Bdd
+import axios from "axios";
 // Components
 import Input from "../components/Input";
 import Textarea from "../components/Textarea";
@@ -12,6 +14,12 @@ const Contact = () => {
 		textarea: "",
 	});
 
+	// Error
+	const [errorName, setErrorName] = useState(false);
+	const [errorlastname, setErrorLastname] = useState(false);
+	const [errorEmail, setErrorEmail] = useState(false);
+	const [errorTextarea, setErrorTextarea] = useState(false);
+
 	// fonction qui récupère chaque valeur des inputs grace au Name
 	const handleChangeInput = (event) => {
 		setValueInput({
@@ -23,8 +31,35 @@ const Contact = () => {
 	// Soumission du formulaire
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		console.log(valueInput);
+		if (
+			valueInput.name !== "" &&
+			valueInput.lastname !== "" &&
+			valueInput.email !== "" &&
+			valueInput.textarea !== ""
+		) {
+			try {
+				console.log("----->", valueInput);
+				console.log("envoyé en bdd");
+			} catch (error) {
+				console.log("error trycatch");
+			}
+		} else {
+			console.log(valueInput);
+			if (valueInput.name === "") {
+				setErrorName(true);
+			}
+			if (valueInput.lastname === "") {
+				setErrorLastname(true);
+			}
+			if (valueInput.email === "") {
+				setErrorEmail(true);
+			}
+			if (valueInput.textarea === "") {
+				setErrorTextarea(true);
+			}
+		}
 	};
+
 	return (
 		<>
 			<div id="formulaire" className="effect">
@@ -46,6 +81,9 @@ const Contact = () => {
 								type="text"
 								value={valueInput.name}
 								onChange={handleChangeInput}
+								className={
+									errorName === true ? "error-form" : null
+								}
 							/>
 						</div>
 						<div className="input-flex">
@@ -56,6 +94,9 @@ const Contact = () => {
 								type="text"
 								value={valueInput.lastname}
 								onChange={handleChangeInput}
+								className={
+									errorlastname === true ? "error-form" : null
+								}
 							/>
 						</div>
 					</div>
@@ -66,6 +107,7 @@ const Contact = () => {
 						type="email"
 						value={valueInput.email}
 						onChange={handleChangeInput}
+						className={errorEmail === true ? "error-form" : null}
 					/>
 					<Textarea
 						label="Votre projet"
@@ -74,9 +116,18 @@ const Contact = () => {
 						rows={5}
 						value={valueInput.textarea}
 						onChange={handleChangeInput}
+						className={errorTextarea === true ? "error-form" : null}
 					/>
 					<Input type="submit" />
 				</form>
+				{errorName === true ||
+				errorlastname === true ||
+				errorEmail === true ||
+				errorTextarea === true ? (
+					<div className="error-form-info">
+						<p>Merci de remplir tous les champs</p>
+					</div>
+				) : null}
 			</div>
 		</>
 	);
