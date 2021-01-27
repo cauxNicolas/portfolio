@@ -1,36 +1,27 @@
 import React, { useState } from "react";
 
 const Contact = () => {
-	const [name, setName] = useState("");
-	const [lastname, setlastname] = useState("");
-	const [email, setEmail] = useState("");
-	const [textarea, setTextarea] = useState("");
-	// Error
-	const [errorName, setErrorName] = useState(false);
-	const [errorLastname, setErrorLastname] = useState(false);
-	const [errorEmail, setErrorEmail] = useState(false);
-	const [errorTextarea, setErrorTextarea] = useState(false);
+	// Un useState pour chaque inout
+	const [valueInput, setValueInput] = useState({
+		name: "",
+		lastname: "",
+		email: "",
+		textarea: "",
+	});
 
-	const handleChangeName = (event) => {
-		setName(event.target.value);
+	// fonction qui récupère chaque input grace au Name
+	const handleChangeInput = (event) => {
+		setValueInput({
+			...valueInput,
+			[event.target.name]: event.target.value,
+		});
 	};
 
-	const handleChangeLastname = (event) => {
-		setlastname(event.target.value);
-	};
-
-	const handleChangeEmail = (event) => {
-		setEmail(event.target.value);
-	};
-
-	const handleTextarea = (event) => {
-		setTextarea(event.target.value);
-	};
-
+	// Soumission du formulaire
 	const handleSubmit = (event) => {
 		event.preventDefault();
 	};
-
+	console.log(valueInput);
 	return (
 		<>
 			<div id="formulaire" className="effect">
@@ -48,34 +39,38 @@ const Contact = () => {
 							<label>Nom</label>
 							<input
 								placeholder="Nom"
+								name="name"
 								type="text"
-								value={name}
-								onChange={handleChangeName}
+								value={valueInput.name}
+								onChange={handleChangeInput}
 							/>
 						</div>
 						<div className="input-flex">
 							<label>Prénom</label>
 							<input
 								placeholder="Prénom"
+								name="lastname"
 								type="text"
-								value={lastname}
-								onChange={handleChangeLastname}
+								value={valueInput.lastname}
+								onChange={handleChangeInput}
 							/>
 						</div>
 					</div>
 					<label>Email</label>
 					<input
 						placeholder="Email"
+						name="email"
 						type="email"
-						value={email}
-						onChange={handleChangeEmail}
+						value={valueInput.email}
+						onChange={handleChangeInput}
 					/>
 					<label>Votre projet</label>
 					<textarea
 						rows="5"
+						name="textarea"
 						placeholder="Décrivez - moi votre projet en quelques lignes ..."
-						value={textarea}
-						onChange={handleTextarea}
+						value={valueInput.textarea}
+						onChange={handleChangeInput}
 					/>
 					<input type="submit" />
 				</form>
