@@ -13,7 +13,6 @@ const Contact = () => {
 		email: "",
 		textarea: "",
 	});
-
 	// Error
 	const [errorName, setErrorName] = useState(false);
 	const [errorlastname, setErrorLastname] = useState(false);
@@ -29,7 +28,8 @@ const Contact = () => {
 	};
 
 	// Soumission du formulaire
-	const handleSubmit = (event) => {
+	const handleSubmit = async (event) => {
+		console.log(valueInput);
 		event.preventDefault();
 		if (
 			valueInput.name !== "" &&
@@ -38,8 +38,16 @@ const Contact = () => {
 			valueInput.textarea !== ""
 		) {
 			try {
-				console.log("----->", valueInput);
-				console.log("envoyé en bdd");
+				const response = await axios.post(
+					process.env.REACT_APP_SEND_FORM,
+					{
+						name: valueInput.name,
+						lastname: valueInput.lastname,
+						email: valueInput.email,
+						textarea: valueInput.textarea,
+					}
+				);
+				console.log(response.data);
 			} catch (error) {
 				console.log("error trycatch");
 			}
@@ -60,15 +68,18 @@ const Contact = () => {
 		}
 	};
 
+	/*----------*\
+		JSX 
+	\*----------*/
+
 	return (
 		<>
 			<div id="formulaire" className="effect">
 				<h1>Un projet à réaliser ?</h1>
 				<p className="mb-2">
-					Vous souhaitez réaliser un projet webApp ou une application
-					mobile ? Réaliser un parcours design UI UX ? Refonte d'une
-					charte ? N'hesitez pas à remplir le formulaire. Je vous
-					répondrai.
+					Vous souhaitez réaliser une webApp ou une application mobile
+					? Réaliser un parcours design UI UX ? Refonte d'une charte ?
+					N'hesitez pas à remplir le formulaire. Je vous répondrai.
 				</p>
 
 				<form onSubmit={handleSubmit}>
