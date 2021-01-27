@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+// Components
+import Input from "../components/Input";
+import Textarea from "../components/Textarea";
 
 const Contact = () => {
-	// Un useState pour chaque inout
+	// Un état d'objet pour chaque input
 	const [valueInput, setValueInput] = useState({
 		name: "",
 		lastname: "",
@@ -9,12 +12,13 @@ const Contact = () => {
 		textarea: "",
 	});
 
-	// fonction qui récupère chaque input grace au Name
+	// fonction qui récupère chaque valeur des inputs grace au Name
 	const handleChangeInput = (event) => {
 		setValueInput({
 			...valueInput,
 			[event.target.name]: event.target.value,
 		});
+		console.log("---->", event.target);
 	};
 
 	// Soumission du formulaire
@@ -36,8 +40,8 @@ const Contact = () => {
 				<form onSubmit={handleSubmit}>
 					<div className="d-flex space-between">
 						<div className="input-flex">
-							<label>Nom</label>
-							<input
+							<Input
+								label="Nom"
 								placeholder="Nom"
 								name="name"
 								type="text"
@@ -46,8 +50,8 @@ const Contact = () => {
 							/>
 						</div>
 						<div className="input-flex">
-							<label>Prénom</label>
-							<input
+							<Input
+								label="Prénom"
 								placeholder="Prénom"
 								name="lastname"
 								type="text"
@@ -56,23 +60,23 @@ const Contact = () => {
 							/>
 						</div>
 					</div>
-					<label>Email</label>
-					<input
+					<Input
+						label="Email"
 						placeholder="Email"
 						name="email"
 						type="email"
 						value={valueInput.email}
 						onChange={handleChangeInput}
 					/>
-					<label>Votre projet</label>
-					<textarea
-						rows="5"
-						name="textarea"
+					<Textarea
+						label="Votre projet"
 						placeholder="Décrivez - moi votre projet en quelques lignes ..."
+						name="textarea"
+						rows={5}
 						value={valueInput.textarea}
 						onChange={handleChangeInput}
 					/>
-					<input type="submit" />
+					<Input type="submit" />
 				</form>
 			</div>
 		</>
