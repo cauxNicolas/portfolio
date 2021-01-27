@@ -18,14 +18,13 @@ const Contact = () => {
 			...valueInput,
 			[event.target.name]: event.target.value,
 		});
-		console.log("---->", event.target);
 	};
 
 	// Soumission du formulaire
 	const handleSubmit = (event) => {
 		event.preventDefault();
+		console.log(valueInput);
 	};
-	console.log(valueInput);
 	return (
 		<>
 			<div id="formulaire" className="effect">
