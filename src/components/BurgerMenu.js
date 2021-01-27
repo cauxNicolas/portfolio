@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const BurgerMenu = ({ burgerChange, setburgerChange }) => {
 	const burgerMenuChange = () => {
@@ -7,11 +7,12 @@ const BurgerMenu = ({ burgerChange, setburgerChange }) => {
 
 	return (
 		<div
-			className={
+			/* 			className={
 				burgerChange === true
 					? "container-burger"
 					: "container-burger change"
-			}
+			} */
+			className={`container-burger ${!burgerChange && "change"}`} /* Mo */
 			onClick={burgerMenuChange}
 		>
 			<div className="bar1"></div>

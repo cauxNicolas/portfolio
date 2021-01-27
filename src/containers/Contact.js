@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 
 const Contact = () => {
-	const [name, setname] = useState("");
+	const [name, setName] = useState("");
 	const [lastname, setlastname] = useState("");
-	const [email, setemail] = useState("");
+	const [email, setEmail] = useState("");
+	const [textarea, setTextarea] = useState("");
+	// Error
+	const [errorName, setErrorName] = useState(false);
+	const [errorLastname, setErrorLastname] = useState(false);
+	const [errorEmail, setErrorEmail] = useState(false);
+	const [errorTextarea, setErrorTextarea] = useState(false);
 
 	const handleChangeName = (event) => {
-		setname(event.target.value);
+		setName(event.target.value);
 	};
 
 	const handleChangeLastname = (event) => {
@@ -14,7 +20,11 @@ const Contact = () => {
 	};
 
 	const handleChangeEmail = (event) => {
-		setemail(event.target.value);
+		setEmail(event.target.value);
+	};
+
+	const handleTextarea = (event) => {
+		setTextarea(event.target.value);
 	};
 
 	const handleSubmit = (event) => {
@@ -64,6 +74,8 @@ const Contact = () => {
 					<textarea
 						rows="5"
 						placeholder="Décrivez - moi votre projet en quelques lignes ..."
+						value={textarea}
+						onChange={handleTextarea}
 					/>
 					<input type="submit" />
 				</form>

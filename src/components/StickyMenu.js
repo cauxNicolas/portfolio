@@ -1,6 +1,10 @@
 import React from "react";
 // Navigation
 import { Link } from "react-router-dom";
+// Components
+import BurgerMenu from "./BurgerMenu";
+// Image
+import LogoSticky from "../img/nicaux-sticky.svg";
 
 const StickyMenu = ({ burgerChange, setburgerChange }) => {
 	const closeMenu = () => {
@@ -30,6 +34,19 @@ const StickyMenu = ({ burgerChange, setburgerChange }) => {
 						</li>
 					</ul>
 				</nav>
+			</div>
+			<div className="sticky-menu">
+				<div>
+					<a href="/">
+						<img src={LogoSticky} alt="logo nicolas caux" />
+					</a>
+				</div>
+				<div id="burger">
+					<BurgerMenu
+						burgerChange={burgerChange}
+						setburgerChange={setburgerChange}
+					/>
+				</div>
 			</div>
 		</>
 	);
