@@ -129,8 +129,6 @@ div.menu > a {
 #works {
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
-	box-sizing: border-box;
 }
 
 .content-works {
@@ -161,6 +159,9 @@ div.menu > a {
 }
 
 @media screen and (max-width: 760px) {
+	#works {
+		margin-top: 30px;
+	}
 	#works nav {
 		align-items: center;
 		justify-content: space-between;
@@ -176,6 +177,10 @@ div.menu > a {
 		font-size: 1rem;
 		line-height: 1.2rem;
 	}
+}
+
+#masonry-grid {
+	margin: 1px;
 }
 
 /*-------------------------------*\

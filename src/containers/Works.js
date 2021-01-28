@@ -1,10 +1,11 @@
 import React from "react";
+import Gallery from "../components/Gallery";
 
 const Works = () => {
 	return (
 		<div id="works">
 			<div className="content-works">
-				<nav>
+				{/* <nav>
 					<div>
 						<a>All</a>
 					</div>
@@ -20,8 +21,10 @@ const Works = () => {
 					<div>
 						<a>Video</a>
 					</div>
-				</nav>
-				<div className="preview-works"></div>
+				</nav> */}
+				<div className="preview-works">
+					<Gallery />
+				</div>
 			</div>
 		</div>
 	);
