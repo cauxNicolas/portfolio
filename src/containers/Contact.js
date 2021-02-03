@@ -71,8 +71,10 @@ const Contact = () => {
 				);
 				errorValidate();
 				valueEmpty();
-				//setValidForm(response.data);
-				setTimeout(setValidForm(response.data), 3000);
+				setValidForm(response.data);
+				setTimeout(() => {
+					setValidForm("");
+				}, 3000);
 			} catch (error) {
 				setvalidEmail(error.response.data.message);
 			}
