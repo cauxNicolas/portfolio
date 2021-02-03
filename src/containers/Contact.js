@@ -13,6 +13,10 @@ const Contact = () => {
 		email: "",
 		textarea: "",
 	});
+	// Envoi serveur OK
+	const [validForm, setValidForm] = useState("");
+	// Erreur email
+	const [validEmail, setvalidEmail] = useState("");
 	// Error
 	const [errorName, setErrorName] = useState(false);
 	const [errorlastname, setErrorLastname] = useState(false);
@@ -27,9 +31,27 @@ const Contact = () => {
 		});
 	};
 
+	// disparition des erreurs lors de la soumission réussie
+	const errorValidate = () => {
+		setErrorName(false);
+		setErrorLastname(false);
+		setErrorEmail(false);
+		setErrorTextarea(false);
+		setvalidEmail("");
+	};
+
+	// vider les inputs
+	const valueEmpty = () => {
+		setValueInput({
+			name: "",
+			lastname: "",
+			email: "",
+			textarea: "",
+		});
+	};
+
 	// Soumission du formulaire
 	const handleSubmit = async (event) => {
-		console.log(valueInput);
 		event.preventDefault();
 		if (
 			valueInput.name !== "" &&
@@ -47,12 +69,14 @@ const Contact = () => {
 						textarea: valueInput.textarea,
 					}
 				);
-				console.log(response.data);
+				errorValidate();
+				valueEmpty();
+				//setValidForm(response.data);
+				setTimeout(setValidForm(response.data), 3000);
 			} catch (error) {
-				console.log("error trycatch");
+				setvalidEmail(error.response.data.message);
 			}
 		} else {
-			console.log(valueInput);
 			if (valueInput.name === "") {
 				setErrorName(true);
 			}
@@ -131,6 +155,16 @@ const Contact = () => {
 					/>
 					<Input type="submit" />
 				</form>
+				{validForm !== "" ? (
+					<div className="validate-form">
+						<p>{validForm}</p>
+					</div>
+				) : null}
+				{validEmail !== "" ? (
+					<div className="error-form-info">
+						<p>{validEmail}</p>
+					</div>
+				) : null}
 				{errorName === true ||
 				errorlastname === true ||
 				errorEmail === true ||

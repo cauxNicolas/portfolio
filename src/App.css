@@ -293,12 +293,26 @@ form .input-flex {
 
 /* Form Error */
 .error-form {
-	background-color: rgba(255, 0, 0, 0.15);
-	border: 1px solid rgba(255, 0, 0, 0.25);
+	/* background-color: rgba(255, 0, 0, 0.15); */
+	border: 1px solid rgba(255, 0, 0, 0.39);
+}
+
+.error-form-info {
+	background-color: rgba(255, 0, 0, 0.158);
+	padding: 15px;
 }
 
 .error-form-info p {
 	color: rgba(255, 0, 0, 0.8);
+	font-size: 0.8rem;
+	text-align: center;
+}
+
+/* Validate Form */
+.validate-form {
+	background-color: rgba(1, 158, 27, 0.158);
+	padding: 15px;
+	color: rgba(1, 158, 27, 0.8);
 	font-size: 0.8rem;
 	text-align: center;
 }
