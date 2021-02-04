@@ -105,7 +105,7 @@ const Contact = () => {
 				<p className="mb-2">
 					Vous souhaitez réaliser une webApp ou une application mobile
 					? Réaliser un parcours design UI UX ? Refonte d'une charte ?
-					N'hesitez pas à remplir le formulaire. Je vous répondrai.
+					Décrivez-le en quelques lignes. Je vous répondrai.
 				</p>
 
 				<form onSubmit={handleSubmit}>
