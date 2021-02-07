@@ -61,7 +61,8 @@ const Contact = () => {
 		) {
 			try {
 				const response = await axios.post(
-					process.env.REACT_APP_SEND_FORM,
+					/* process.env.REACT_APP_SEND_FORM, */
+					process.env.REACT_APP_LOCAL,
 					{
 						name: valueInput.name,
 						lastname: valueInput.lastname,
