@@ -5,8 +5,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // Containers
 import About from "./containers/About";
-import Works from "./containers/Works";
 import Contact from "./containers/Contact";
+import Work from "./containers/Work";
+import Works from "./containers/Works";
 import Admin from "./containers/Admin";
 
 // Components
@@ -43,6 +44,9 @@ function App() {
 							</Route>
 							<Route path="/contact">
 								<Contact />
+							</Route>
+							<Route path="/work/:id">
+								<Work />
 							</Route>
 							<Route path="/">
 								<Works />
