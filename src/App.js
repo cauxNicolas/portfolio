@@ -9,6 +9,7 @@ import Contact from "./containers/Contact";
 import Work from "./containers/Work";
 import Works from "./containers/Works";
 import Admin from "./containers/Admin";
+import AddWorks from "./containers/AddWorks";
 
 // Components
 import Menu from "./components/Menu";
@@ -19,10 +20,13 @@ function App() {
 
 	const admin = window.location.pathname;
 
-	if (admin === "/react-admin-connect") {
+	if (admin === "/react-admin-connect" || admin === "/add-works") {
 		return (
 			<Router>
-				<Admin path="/react-admin-connect" />
+				<Switch>
+					<Admin path="/react-admin-connect" />
+					<AddWorks path="/add-works" />
+				</Switch>
 			</Router>
 		);
 	} else {

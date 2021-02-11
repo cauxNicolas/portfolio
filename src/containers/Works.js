@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 const Works = () => {
-	const [isLodading, setIsLodading] = useState(false);
-
 	const api = [
 		{
 			_id: 1,

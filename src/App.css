@@ -439,3 +439,35 @@ form .input-flex {
 		height: 100%;
 	}
 }
+
+/*-------------------------------*\
+     Admin     
+\*-------------------------------*/
+
+#admin {
+	display: flex;
+	align-items: center;
+}
+
+#admin h2 {
+	color: white;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#admin form {
+	width: 250px;
+	padding: 30px;
+	border-radius: 10px;
+	background: linear-gradient(150deg, #50bddf, #24285c, #b45397);
+}
+
+#admin input {
+	font-size: 1.3rem;
+}
+
+#admin input[type="submit"] {
+	font-size: 1rem;
+	background: white;
+	color: grey;
+}
