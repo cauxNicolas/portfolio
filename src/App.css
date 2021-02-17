@@ -471,3 +471,31 @@ form .input-flex {
 	background: white;
 	color: grey;
 }
+
+/*-------------------------------*\
+     AddWorks     
+\*-------------------------------*/
+#add-works {
+	display: flex;
+	justify-content: center;
+	margin-top: 3rem;
+}
+#add-works form {
+	width: 500px;
+}
+
+#add-works .checkbox {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 100%;
+}
+
+#add-works .checkbox > div {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-right: 20px;
+	width: 25%;
+}

@@ -8,6 +8,8 @@ const Input = ({
 	value,
 	onChange,
 	className,
+	multiple,
+	id,
 }) => {
 	return (
 		<>
@@ -19,6 +21,8 @@ const Input = ({
 				value={value}
 				onChange={onChange}
 				className={className}
+				multiple={multiple}
+				id={id}
 			/>
 		</>
 	);
