@@ -133,7 +133,8 @@ div.menu > a {
 
 .content-works {
 	height: 100%;
-	margin: 0 30px 30px 30px;
+	/* margin: 0 30px 30px 30px; */
+	margin: 0 1px;
 }
 
 #works nav {

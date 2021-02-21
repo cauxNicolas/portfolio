@@ -4,18 +4,23 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import axios from "axios";
 
 const Works = () => {
+	const [isLoading, setIsLoading] = useState(false);
+	const [works, setWorks] = useState([]);
+
 	useEffect(() => {
 		const fetchData = async () => {
-			const data = await axios.get(process.env.REACT_APP_GET);
-			console.log(data);
+			const response = await axios.get(process.env.REACT_APP_GET);
+			setWorks(response.data);
 		};
 		fetchData();
 		setIsLoading(true);
 	}, []);
 
-	const [isLoading, setIsLoading] = useState(false);
-
-	const api = [];
+	const newTab = [];
+	for (let i = 0; i < works.length; i++) {
+		newTab.push(works[i].cover.secure_url);
+	}
+	console.log(newTab);
 	return (
 		<div>
 			{isLoading === true ? (
@@ -31,25 +36,17 @@ const Works = () => {
 								}}
 							>
 								<Masonry>
-									{api.map((work, index) => {
+									{newTab.map((tab, index) => {
 										return (
-											<Link
-												to={`/work/${work.project._id}`}
-											>
-												<div
-													id="masonry-grid"
-													key={index}
-												>
-													<img
-														src={work.picture}
-														style={{
-															width: "100%",
-															display: "block",
-														}}
-														alt={work.picture}
-													/>
-												</div>
-											</Link>
+											<div id="masonry-grid" key={index}>
+												<img
+													src={tab}
+													style={{
+														width: "100%",
+														display: "block",
+													}}
+												/>
+											</div>
 										);
 									})}
 								</Masonry>

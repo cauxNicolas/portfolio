@@ -26,7 +26,7 @@ function App() {
 					setburgerChange={setburgerChange}
 				/>
 				{/* Navigation */}
-				<div className="content">
+				<div style={{ width: "100%" }}>
 					<Switch>
 						<Route path="/about">
 							<About />
