@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 // Navigation
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -13,8 +13,23 @@ import Works from "./containers/Works";
 import Menu from "./components/Menu";
 import StickyMenu from "./components/StickyMenu";
 
+// acces bdd
+import axios from "axios";
+
 function App() {
 	const [burgerChange, setburgerChange] = useState(true);
+	const [works, setWorks] = useState([]);
+	const [isLoading, setIsLoading] = useState(false);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			const response = await axios.get(process.env.REACT_APP_GET);
+			setWorks(response.data);
+		};
+		fetchData();
+		setIsLoading(true);
+	}, []);
+
 	return (
 		<Router>
 			<div className="container">
@@ -38,7 +53,7 @@ function App() {
 							<Work />
 						</Route>
 						<Route path="/">
-							<Works />
+							<Works works={works} isLoading={isLoading} />
 						</Route>
 					</Switch>
 				</div>
