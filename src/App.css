@@ -129,7 +129,6 @@ div.menu > a {
 #works {
 	width: 100%;
 	height: 100%;
-	margin: 30px;
 }
 
 .content-works {
@@ -161,9 +160,6 @@ div.menu > a {
 }
 
 @media screen and (max-width: 760px) {
-	#works {
-		margin-top: 30px;
-	}
 	#works nav {
 		align-items: center;
 		justify-content: space-between;

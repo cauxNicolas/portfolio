@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 const Works = ({ works, isLoading }) => {
-	console.log(works);
 	return (
 		<div>
 			{isLoading === true ? (
@@ -15,7 +14,7 @@ const Works = ({ works, isLoading }) => {
 									350: 1,
 									750: 2,
 									900: 3,
-									1200: 4,
+									1200: 5,
 								}}
 							>
 								<Masonry>
