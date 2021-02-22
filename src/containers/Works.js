@@ -21,12 +21,7 @@ const Works = ({ works, isLoading }) => {
 									{works.map((work, index) => {
 										return (
 											<div id="masonry-grid" key={index}>
-												<Link
-													to={
-														"/work/" +
-														work.content._id
-													}
-												>
+												<Link to={"/work/" + work._id}>
 													<img
 														src={
 															work.cover

@@ -23,7 +23,7 @@ function App() {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const response = await axios.get(process.env.REACT_APP_GET);
+			const response = await axios.get(process.env.REACT_APP_GET_LOCAL);
 			setWorks(response.data);
 		};
 		fetchData();
