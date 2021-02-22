@@ -497,3 +497,27 @@ form .input-flex {
 	margin-right: 20px;
 	width: 25%;
 }
+
+/*-------------------------------*\
+	 Work     
+\*-------------------------------*/
+.content-work {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.slider-control-bottomcenter {
+	display: none;
+}
+
+.btn-next-slider,
+.btn-prev-slider {
+	background-color: rgba(128, 128, 128, 0.274) !important;
+	outline: none;
+}
+
+.slider-slide {
+	outline: none;
+}
