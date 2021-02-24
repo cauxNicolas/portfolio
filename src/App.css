@@ -515,3 +515,23 @@ form .input-flex {
 .description {
 	margin: 30px;
 }
+
+.description .desc-textarea {
+	font-weight: 200;
+	line-height: 1.4rem;
+}
+
+@media screen and (max-width: 760px) {
+	.work-slider {
+		margin-top: 60px;
+	}
+}
+
+/* custom slider */
+.slide-show .ss-indicators > div > span.ss-active {
+	background: rgba(0, 0, 0, 0.486) !important;
+}
+
+.slide-show .ss-indicators > div > span {
+	border: 1px solid rgba(0, 0, 0, 0.486) !important;
+}
