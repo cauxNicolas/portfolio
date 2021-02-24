@@ -61,6 +61,23 @@ nav a {
 	color: grey;
 }
 
+.content-general {
+	width: calc(100% - 320px);
+	margin: 30px;
+	overflow: auto;
+	position: absolute;
+	right: 0;
+}
+
+@media screen and (max-width: 760px) {
+	.content-general {
+		width: 100%;
+		margin: 0;
+		overflow: auto;
+		position: inherit;
+	}
+}
+
 /*-------------------------------*\
      Menu     
 \*-------------------------------*/
@@ -74,14 +91,13 @@ nav a {
 
 .menu {
 	width: 200px;
-	/* height: calc(100vh - 60px); */
 	padding: 30px;
 	background-color: var(--gris-menu);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* box-shadow: 5px 0 10px rgba(187, 187, 187, 0.596); */
-	overflow: hidden;
+	position: fixed;
+	height: 100%;
 }
 
 .menu img {
@@ -111,7 +127,7 @@ div.menu > a {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	overflow-y: scroll;
+	overflow: auto;
 	margin-top: 30px;
 }
 
@@ -248,9 +264,7 @@ form .input-flex {
 	.content {
 		margin-top: 70px;
 		height: calc(100vh - 70px);
-		/* height: 100%; */
-		overflow: hidden;
-		overflow-y: scroll;
+		overflow: auto;
 	}
 	/* Sticky-menu */
 	.sticky-menu {
@@ -439,38 +453,6 @@ form .input-flex {
 }
 
 /*-------------------------------*\
-     Admin     
-\*-------------------------------*/
-
-#admin {
-	display: flex;
-	align-items: center;
-}
-
-#admin h2 {
-	color: white;
-	text-align: center;
-	margin-bottom: 20px;
-}
-
-#admin form {
-	width: 250px;
-	padding: 30px;
-	border-radius: 10px;
-	background: linear-gradient(150deg, #50bddf, #24285c, #b45397);
-}
-
-#admin input {
-	font-size: 1.3rem;
-}
-
-#admin input[type="submit"] {
-	font-size: 1rem;
-	background: white;
-	color: grey;
-}
-
-/*-------------------------------*\
      AddWorks     
 \*-------------------------------*/
 #add-works {
@@ -506,6 +488,7 @@ form .input-flex {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+	overflow: hidden;
 }
 
 .slider-control-bottomcenter {
@@ -520,4 +503,8 @@ form .input-flex {
 
 .slider-slide {
 	outline: none;
+}
+
+.description {
+	margin: 30px;
 }
