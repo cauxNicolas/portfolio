@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import showSkills from "../function/showSkills";
 
 // autre slider
 import SlideShow from "react-image-show";
@@ -11,8 +12,6 @@ const Work = () => {
 
 	const [work, setWork] = useState({});
 	const [isLoading, setIsLoading] = useState(false);
-
-	console.log(work);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -25,7 +24,6 @@ const Work = () => {
 		fetchData();
 	}, [id]);
 
-	//console.log(work.content.slider);
 	const urlArray = [];
 
 	if (isLoading === true) {
@@ -33,7 +31,7 @@ const Work = () => {
 			urlArray.push(work.content.slider[i].secure_url);
 		}
 	}
-
+	console.log(work);
 	return (
 		<div className="content-work">
 			{isLoading === true ? (
@@ -45,19 +43,29 @@ const Work = () => {
 							imagesWidth="100%"
 							imagesHeight="450px"
 							imagesHeightMobile="56vw"
-							//thumbnailsWidth="920px"
-							//thumbnailsHeight="12vw"
 							indicators
 							thumbnails={false}
 							fixedImagesHeight={true}
 							arrows={false}
 						/>
 					</div>
-					<div className="description">
-						<h1>{work.content.title}</h1>
-						<p className="desc-textarea">
-							{work.content.description}
-						</p>
+					<div className="d-flex width-skill-desc">
+						<div className="skills">
+							{work.content.skills.map((skill, index) => {
+								return (
+									<div className="skill-svg" key={index}>
+										{showSkills(skill)}
+										<p>{skill}</p>
+									</div>
+								);
+							})}
+						</div>
+						<div className="description">
+							<h1>{work.content.title}</h1>
+							<p className="desc-textarea">
+								{work.content.description}
+							</p>
+						</div>
 					</div>
 				</>
 			) : (

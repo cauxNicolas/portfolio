@@ -70,6 +70,10 @@ nav a {
 }
 
 @media screen and (max-width: 760px) {
+	h1 {
+		font-size: 1.7rem;
+		line-height: 1.9rem;
+	}
 	.content-general {
 		width: 100%;
 		margin: 0;
@@ -514,6 +518,7 @@ form .input-flex {
 
 .description {
 	margin: 30px;
+	width: 80%;
 }
 
 .description .desc-textarea {
@@ -534,4 +539,62 @@ form .input-flex {
 
 .slide-show .ss-indicators > div > span {
 	border: 1px solid rgba(0, 0, 0, 0.486) !important;
+}
+
+/* custom skill-img */
+.skills {
+	margin: 30px;
+	width: 20%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	height: 100%;
+}
+
+.skill-svg {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 50%;
+	margin-bottom: 30px;
+}
+
+.skill-svg img {
+	height: 40px;
+}
+
+.skill-svg p {
+	margin-top: 5px;
+	font-size: 0.6rem;
+	font-weight: 700;
+}
+
+.width-skill-desc {
+	width: 910px;
+}
+
+@media screen and (max-width: 1155px) {
+	.width-skill-desc {
+		width: auto;
+	}
+}
+
+@media screen and (max-width: 1020px) {
+	.width-skill-desc {
+		flex-direction: column;
+	}
+	.description {
+		width: auto;
+		order: 1;
+	}
+	.skills {
+		order: 2;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		width: auto;
+	}
+	.skill-svg {
+		width: auto;
+		margin-right: 30px;
+	}
 }
