@@ -23,121 +23,127 @@ const showSkills = (skill) => {
 		case "Illustrator":
 			return (
 				<>
-					<img src={Illus} />
+					<img src={Illus} alt="logo illustrator" />
 				</>
 			);
 		case "Photoshop":
 			return (
 				<>
-					<img src={Photoshop} />
+					<img src={Photoshop} alt="logo photoshop" />
 				</>
 			);
 		case "Indesign":
 			return (
 				<>
-					<img src={Indesign} />
+					<img src={Indesign} alt="logo indesign" />
 				</>
 			);
 		case "After Effect":
 			return (
 				<>
-					<img src={After} />
+					<img src={After} alt="logo after effect" />
 				</>
 			);
 		case "Html 5":
 			return (
 				<>
-					<img src={Html} />
+					<img src={Html} alt="logo html" />
 				</>
 			);
 		case "Css 3":
 			return (
 				<>
-					<img src={Css} />
+					<img src={Css} alt="logo css" />
 				</>
 			);
 		case "Javascript":
 			return (
 				<>
-					<img src={Javascript} />
+					<img src={Javascript} alt="logo javascript" />
 				</>
 			);
 		case "Bootstrap":
 			return (
 				<>
-					<img src={Bootstrap} />
+					<img src={Bootstrap} alt="logo bootstrap" />
 				</>
 			);
 		case "WordPress":
 			return (
 				<>
-					<img src={Wordpress} />
+					<img src={Wordpress} alt="logo wordpress" />
 				</>
 			);
 		case "React Js":
 			return (
 				<>
-					<img src={React} />
+					<img src={React} alt="logo react" />
 				</>
 			);
 		case "React Native":
 			return (
 				<>
-					<img src={React} />
+					<img src={React} alt="logo rect" />
 				</>
 			);
 		case "Heroku":
 			return (
 				<>
-					<img src={Heroku} />
+					<img src={Heroku} alt="logo heroku" />
 				</>
 			);
 		case "Node Js":
 			return (
 				<>
-					<img src={NodeJs} />
+					<img src={NodeJs} alt="logo nodes js" />
 				</>
 			);
 		case "Git":
 			return (
 				<>
-					<img src={Git} />
+					<img src={Git} alt="logo git" />
 				</>
 			);
 		case "GitHub":
 			return (
 				<>
-					<img src={GitHub} />
+					<img src={GitHub} alt="logo github" />
 				</>
 			);
 		case "Stripe":
 			return (
 				<>
-					<img src={Stripe} />
+					<img src={Stripe} alt="logo stripe" />
 				</>
 			);
 		case "Cloudinary":
 			return (
 				<>
-					<img src={Cloudinary} />
+					<img src={Cloudinary} alt="logo cloudinary" />
 				</>
 			);
 		/* case "Express":
 			return (
 				<>
-					<img src={Express} />
+					<img src={Express} alt="logo express" />
 				</>
 			);
 		case "Axios":
 			return (
 				<>
-					<img src={Axios} />
+					<img src={Axios} alt="logo axios" />
 				</>
 			); */
 		case "MongoDB":
 			return (
 				<>
-					<img src={MongoDB} />
+					<img src={MongoDB} alt="logo mongoDB" />
+				</>
+			);
+		default:
+			return (
+				<>
+					<img src={MongoDB} alt="logo mongoDB" />
 				</>
 			);
 	}

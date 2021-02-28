@@ -31,6 +31,7 @@ const Works = ({ works, isLoading }) => {
 															width: "100%",
 															display: "block",
 														}}
+														alt="slider"
 													/>
 												</Link>
 											</div>
