@@ -273,7 +273,7 @@ form .input-flex {
 	}
 	.content {
 		margin-top: 70px;
-		height: calc(100vh - 70px);
+		/* height: calc(100vh - 70px); */
 		overflow: auto;
 	}
 	/* Sticky-menu */
@@ -607,6 +607,7 @@ form .input-flex {
 	text-align: left !important;
 	width: 100%;
 	height: 100%;
+	margin-bottom: 30px;
 }
 
 #about p {
@@ -631,9 +632,23 @@ form .input-flex {
 
 #about .link-about {
 	margin-top: 20px;
+	display: flex;
 }
 
 #about .link-about img {
 	width: 40px;
 	height: 40px;
+}
+#about .link-about p {
+	font-size: 0.6rem;
+	font-weight: 700;
+	text-align: center;
+}
+
+#about .link-about > div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 30px;
+	width: 70px;
 }

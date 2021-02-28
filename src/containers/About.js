@@ -1,5 +1,7 @@
 import React from "react";
 import github from "../img/gitHub.svg";
+import Linkedin from "../img/linkedin.svg";
+import Youtube from "../img/youtube.svg";
 
 const About = () => {
 	const wf3 =
@@ -15,9 +17,9 @@ const About = () => {
 				<p>
 					Pour me présenter en quelques lignes, je m'appelle
 					<span> Nicolas Caux</span> et avant j'étais
-					<span> Graphic Designer</span>, diplômé d'écoles d'Arts sur
-					Paris. je réalisais tout le <span> design</span> d'une
-					entreprise.
+					<span> Graphic Designer UI UX</span>, diplômé d'écoles
+					d'Arts sur Paris. je réalisais tout le <span> design</span>{" "}
+					d'une entreprise.
 				</p>
 				<br />
 				<p>
@@ -71,16 +73,33 @@ const About = () => {
 				</p>
 				<p>Je design votre projet et je le développe !</p>
 				<br />
+				<br />
 				<p>Si vous êtes curieux, voici quelques liens :</p>
 				<div className="link-about">
-					<a href="https://github.com/cauxNicolas" target="_blank">
-						<img
-							src="https://cdns.iconmonstr.com/wp-content/assets/preview/2012/240/iconmonstr-github-1.png"
-							alt="logo github"
-						/>
-						<p>GitHub</p>
-						<img src={github} alt="logo github" />
-					</a>
+					<div>
+						<a
+							href="https://www.linkedin.com/in/nicolas-caux-developpeur-fullstack-react-react-native-ui-ux-designer/"
+							target="_blank"
+						>
+							<img src={Linkedin} alt="logo github" />
+							<p>Linkedin</p>
+						</a>
+					</div>
+					<div>
+						<a
+							href="https://github.com/cauxNicolas"
+							target="_blank"
+						>
+							<img src={github} alt="logo github" />
+							<p>GitHub</p>
+						</a>
+					</div>
+					<div>
+						<a href="https://youtu.be/9z7BWzQ1JhI" target="_blank">
+							<img src={Youtube} alt="logo github" />
+							<p>Youtube</p>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
