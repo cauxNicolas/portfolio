@@ -16,7 +16,7 @@ const Work = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			const response = await axios.get(
-				process.env.REACT_APP_GET + `/work/${id}`
+				"https://portfolio-client-nicaux.herokuapp.com" + `/work/${id}`
 			);
 			setWork(response.data);
 			setIsLoading(true);

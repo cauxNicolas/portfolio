@@ -60,15 +60,19 @@ const Contact = () => {
 			valueInput.textarea !== ""
 		) {
 			try {
-				const response = await axios.post(process.env.REACT_APP_GET, {
-					name: valueInput.name,
-					lastname: valueInput.lastname,
-					email: valueInput.email,
-					textarea: valueInput.textarea,
-				});
+				const response = await axios.post(
+					"https://portfolio-client-nicaux.herokuapp.com/contact",
+					{
+						name: valueInput.name,
+						lastname: valueInput.lastname,
+						email: valueInput.email,
+						textarea: valueInput.textarea,
+					}
+				);
+
+				setValidForm(response.data);
 				errorValidate();
 				valueEmpty();
-				setValidForm(response.data);
 				setTimeout(() => {
 					setValidForm("");
 				}, 3000);

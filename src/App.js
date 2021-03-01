@@ -23,7 +23,9 @@ function App() {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const response = await axios.get(process.env.REACT_APP_GET);
+			const response = await axios.get(
+				"https://portfolio-client-nicaux.herokuapp.com"
+			);
 			setWorks(response.data);
 		};
 		fetchData();
