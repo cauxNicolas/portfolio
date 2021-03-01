@@ -60,16 +60,12 @@ const Contact = () => {
 			valueInput.textarea !== ""
 		) {
 			try {
-				const response = await axios.post(
-					/* process.env.REACT_APP_SEND_FORM, */
-					process.env.REACT_APP_GET_LOCAL,
-					{
-						name: valueInput.name,
-						lastname: valueInput.lastname,
-						email: valueInput.email,
-						textarea: valueInput.textarea,
-					}
-				);
+				const response = await axios.post(process.env.REACT_APP_GET, {
+					name: valueInput.name,
+					lastname: valueInput.lastname,
+					email: valueInput.email,
+					textarea: valueInput.textarea,
+				});
 				errorValidate();
 				valueEmpty();
 				setValidForm(response.data);

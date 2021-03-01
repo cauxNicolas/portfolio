@@ -16,7 +16,7 @@ const Work = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			const response = await axios.get(
-				process.env.REACT_APP_GET_LOCAL + `/work/${id}`
+				process.env.REACT_APP_GET + `/work/${id}`
 			);
 			setWork(response.data);
 			setIsLoading(true);
