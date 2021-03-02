@@ -304,6 +304,7 @@ form .input-flex {
 	/* Formulaire */
 	#formulaire {
 		width: 90%;
+		margin-top: 30px;
 	}
 	form .input-flex {
 		width: 100%;
@@ -534,11 +535,11 @@ form .input-flex {
 
 /* custom slider */
 .slide-show .ss-indicators > div > span.ss-active {
-	background: rgba(0, 0, 0, 0.486) !important;
+	background: #b35296 !important;
 }
 
 .slide-show .ss-indicators > div > span {
-	border: 1px solid rgba(0, 0, 0, 0.486) !important;
+	border: 1px solid #b35296 !important;
 }
 
 /* custom skill-img */
@@ -589,7 +590,7 @@ form .input-flex {
 	}
 	.skills {
 		order: 2;
-		flex-wrap: nowrap;
+		flex-wrap: wrap;
 		justify-content: flex-start;
 		width: auto;
 	}
@@ -605,9 +606,10 @@ form .input-flex {
 
 #about {
 	text-align: left !important;
-	width: 100%;
+	width: 500px;
 	height: 100%;
 	margin-bottom: 30px;
+	margin-top: 20px;
 }
 
 #about p {
