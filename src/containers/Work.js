@@ -6,7 +6,7 @@ import showSkills from "../function/showSkills";
 // autre slider
 import SlideShow from "react-image-show";
 
-const Work = () => {
+const Work = ({ works }) => {
 	// onr récupère l'id dans le query
 	const { id } = useParams();
 
@@ -31,7 +31,7 @@ const Work = () => {
 			urlArray.push(work.content.slider[i].secure_url);
 		}
 	}
-	console.log(work);
+	console.log(works);
 	return (
 		<div className="content-work">
 			{isLoading === true ? (

@@ -51,8 +51,8 @@ function App() {
 						<Route path="/contact">
 							<Contact />
 						</Route>
-						<Route works={works} path="/work/:id">
-							<Work />
+						<Route path="/work/:id">
+							<Work works={works} />
 						</Route>
 						<Route path="/">
 							<Works works={works} isLoading={isLoading} />
