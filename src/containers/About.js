@@ -23,15 +23,15 @@ const About = () => {
 				</p>
 				<br />
 				<p>
-					Une opportunité s'offre à moi en 2015, la réalisation de
-					site internet pour particuliers via le framework
+					Une opportunité s'offre à moi en 2015, la réalisation des
+					sites internet pour particuliers via le framework
 					<span> WordPress</span>. Je découvre l'intégration
 					<span> Html</span> et<span> Css</span>.
 				</p>
 				<p>
 					Dès lors, je ne peux en rester là. Je veux connaître ce qui
-					se cache sous la surface des sites pour maîtriser chaques
-					bugs éventuels, et réaliser des sites sûr-mesures.
+					se cache sous la surface des sites pour maîtriser chaque bug
+					éventuel, et réaliser des sites sûr-mesure.
 				</p>
 				<br />
 				<p>
@@ -63,7 +63,7 @@ const About = () => {
 					. J'apprends à développer des applications mobiles et des
 					sites webApp avec <span>React Native</span> et{" "}
 					<span>React Js</span>, ainsi qu'à maîtriser le
-					<span> Frontend</span> et le <span> backend</span>.
+					<span> Frontend</span> et le <span> Backend</span>.
 				</p>
 				<br />
 				<p>
