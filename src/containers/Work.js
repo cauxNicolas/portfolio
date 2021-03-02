@@ -81,9 +81,17 @@ const Work = ({ works }) => {
 							justifyContent: "space-around",
 						}}
 					>
-						<Link to={"/work/" + tabWork[indexId - 1]}>{"<-"}</Link>
+						{indexId > 0 ? (
+							<Link to={"/work/" + tabWork[indexId - 1]}>
+								{"<-"}
+							</Link>
+						) : null}
 
-						<Link to={"/work/" + tabWork[indexId + 1]}>{"->"}</Link>
+						{indexId < tabWork.length - 1 ? (
+							<Link to={"/work/" + tabWork[indexId + 1]}>
+								{"->"}
+							</Link>
+						) : null}
 					</div>
 				</>
 			) : (
