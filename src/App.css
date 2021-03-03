@@ -501,6 +501,7 @@ form .input-flex {
 	align-items: center;
 	flex-direction: column;
 	overflow: hidden;
+	position: relative;
 }
 
 .slider-control-bottomcenter {
@@ -519,7 +520,8 @@ form .input-flex {
 
 .description {
 	margin: 30px;
-	width: 80%;
+	/* 	width: 100%; */
+	padding: 10px;
 }
 
 .description .desc-textarea {
@@ -545,10 +547,10 @@ form .input-flex {
 /* custom skill-img */
 .skills {
 	margin: 30px;
-	width: 20%;
+	/* width: 20%; */
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	/* justify-content: space-between; */
 	height: 100%;
 }
 
@@ -556,8 +558,9 @@ form .input-flex {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 50%;
-	margin-bottom: 30px;
+	/* width: 50%; */
+	margin: 0 20px 30px 0;
+	padding: 10px;
 }
 
 .skill-svg img {
@@ -574,6 +577,50 @@ form .input-flex {
 	width: 910px;
 }
 
+.arrow-work {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	top: 50vh;
+	z-index: 1;
+}
+
+.arrow-work img {
+	width: 20px;
+}
+
+.arrow-work-mobile {
+	display: none;
+}
+
+@media screen and (max-width: 760px) {
+	.arrow-work {
+		display: none;
+	}
+
+	.arrow-work-mobile img {
+		width: 13px;
+	}
+
+	.arrow-work-mobile {
+		width: 85%;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 30px;
+	}
+
+	.arrow-work-mobile a {
+		display: flex;
+		align-items: center;
+	}
+
+	.arrow-work-mobile p {
+		font-weight: 200;
+		margin: 0 10px 0 10px;
+	}
+}
+
 @media screen and (max-width: 1155px) {
 	.width-skill-desc {
 		width: auto;
@@ -586,10 +633,8 @@ form .input-flex {
 	}
 	.description {
 		width: auto;
-		order: 1;
 	}
 	.skills {
-		order: 2;
 		flex-wrap: wrap;
 		justify-content: flex-start;
 		width: auto;

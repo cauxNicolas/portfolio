@@ -6,6 +6,10 @@ import showSkills from "../function/showSkills";
 // autre slider
 import SlideShow from "react-image-show";
 
+// img
+import Left from "../img/left.svg";
+import Right from "../img/right.svg";
+
 const Work = ({ works }) => {
 	// onr récupère l'id dans le query
 	const { id } = useParams();
@@ -30,6 +34,7 @@ const Work = ({ works }) => {
 		}
 	}
 
+	// deplacement work by work
 	// on recupere les id dans un tableau
 	const tabWork = [];
 	for (let i = 0; i < works.length; i++) {
@@ -38,11 +43,27 @@ const Work = ({ works }) => {
 	// on recupere l'index de l'id de la page dans le tableau
 	const indexId = tabWork.indexOf(id);
 
-	console.log(indexId);
 	return (
 		<div className="content-work">
 			{isLoading === true ? (
 				<>
+					<div className="arrow-work">
+						{indexId > 0 ? (
+							<Link to={"/work/" + tabWork[indexId - 1]}>
+								<img src={Left} alt="fleche de gauche" />
+							</Link>
+						) : (
+							<div></div>
+						)}
+
+						{indexId < tabWork.length - 1 ? (
+							<Link to={"/work/" + tabWork[indexId + 1]}>
+								<img src={Right} alt="fleche de droite" />
+							</Link>
+						) : (
+							<div></div>
+						)}
+					</div>
 					<div className="work-slider">
 						<SlideShow
 							images={urlArray}
@@ -56,7 +77,13 @@ const Work = ({ works }) => {
 							arrows={false}
 						/>
 					</div>
-					<div className="d-flex width-skill-desc">
+					<div className="width-skill-desc">
+						<div className="description">
+							<h1>{work.content.title}</h1>
+							<p className="desc-textarea">
+								{work.content.description}
+							</p>
+						</div>
 						<div className="skills">
 							{work.content.skills.map((skill, index) => {
 								return (
@@ -67,31 +94,25 @@ const Work = ({ works }) => {
 								);
 							})}
 						</div>
-						<div className="description">
-							<h1>{work.content.title}</h1>
-							<p className="desc-textarea">
-								{work.content.description}
-							</p>
-						</div>
 					</div>
-					<div
-						className="d-flex"
-						style={{
-							width: "100%",
-							justifyContent: "space-around",
-						}}
-					>
+					<div className="arrow-work-mobile d-flex">
 						{indexId > 0 ? (
 							<Link to={"/work/" + tabWork[indexId - 1]}>
-								{"<-"}
+								<img src={Left} alt="fleche de gauche" />
+								<p>Précédent</p>
 							</Link>
-						) : null}
+						) : (
+							<div></div>
+						)}
 
 						{indexId < tabWork.length - 1 ? (
 							<Link to={"/work/" + tabWork[indexId + 1]}>
-								{"->"}
+								<p>Suivant</p>
+								<img src={Right} alt="fleche de droite" />
 							</Link>
-						) : null}
+						) : (
+							<div></div>
+						)}
 					</div>
 				</>
 			) : (
