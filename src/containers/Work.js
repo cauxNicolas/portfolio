@@ -4,8 +4,7 @@ import axios from "axios";
 import showSkills from "../function/showSkills";
 
 // autre slider
-import SlideShow from "react-image-show";
-
+import SimpleImageSlider from "react-simple-image-slider";
 // img
 import Left from "../img/left.svg";
 import Right from "../img/right.svg";
@@ -15,6 +14,8 @@ const Work = ({ works }) => {
 	const { id } = useParams();
 	const [work, setWork] = useState({});
 	const [isLoading, setIsLoading] = useState(false);
+	const [newUrl, setNewUrl] = useState([]);
+	let urlArray = [];
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -27,12 +28,16 @@ const Work = ({ works }) => {
 		fetchData();
 	}, [id]);
 
-	const urlArray = [];
 	if (isLoading === true) {
 		for (let i = 0; i < work.content.slider.length; i++) {
-			urlArray.push(work.content.slider[i].secure_url);
+			urlArray.push({ url: work.content.slider[i].secure_url });
 		}
 	}
+
+	const clickArrow = () => {
+		// merci Mo
+		setIsLoading(false);
+	};
 
 	// deplacement work by work
 	// on recupere les id dans un tableau
@@ -50,7 +55,9 @@ const Work = ({ works }) => {
 					<div className="arrow-work">
 						{indexId > 0 ? (
 							<Link to={"/work/" + tabWork[indexId - 1]}>
-								<img src={Left} alt="fleche de gauche" />
+								<div onClick={clickArrow}>
+									<img src={Left} alt="fleche de gauche" />
+								</div>
 							</Link>
 						) : (
 							<div></div>
@@ -58,24 +65,24 @@ const Work = ({ works }) => {
 
 						{indexId < tabWork.length - 1 ? (
 							<Link to={"/work/" + tabWork[indexId + 1]}>
-								<img src={Right} alt="fleche de droite" />
+								<div onClick={clickArrow}>
+									<img src={Right} alt="fleche de droite" />
+								</div>
 							</Link>
 						) : (
 							<div></div>
 						)}
 					</div>
-					<div className="work-slider">
-						<SlideShow
+					<div>
+						{/*  */}
+						<SimpleImageSlider
+							width={896}
+							height={504}
 							images={urlArray}
-							width="1200px"
-							imagesWidth="100%"
-							imagesHeight="450px"
-							imagesHeightMobile="56vw"
-							indicators
-							thumbnails={false}
-							fixedImagesHeight={true}
-							arrows={false}
-						/>
+							slideDuration={0.5}
+							showBullets={true}
+						></SimpleImageSlider>
+						{/*  */}
 					</div>
 					<div className="width-skill-desc">
 						<div className="description">
