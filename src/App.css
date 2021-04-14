@@ -613,6 +613,7 @@ form .input-flex {
 	.arrow-work-mobile a {
 		display: flex;
 		align-items: center;
+		color: black;
 	}
 
 	.arrow-work-mobile p {

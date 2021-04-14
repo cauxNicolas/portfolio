@@ -104,19 +104,23 @@ const Work = ({ works }) => {
 					</div>
 					<div className="arrow-work-mobile d-flex">
 						{indexId > 0 ? (
-							<Link to={"/work/" + tabWork[indexId - 1]}>
-								<img src={Left} alt="fleche de gauche" />
-								<p>Précédent</p>
-							</Link>
+							<div onClick={clickArrow}>
+								<Link to={"/work/" + tabWork[indexId - 1]}>
+									<img src={Left} alt="fleche de gauche" />
+									<p>Précédent</p>
+								</Link>
+							</div>
 						) : (
 							<div></div>
 						)}
 
 						{indexId < tabWork.length - 1 ? (
-							<Link to={"/work/" + tabWork[indexId + 1]}>
-								<p>Suivant</p>
-								<img src={Right} alt="fleche de droite" />
-							</Link>
+							<div onClick={clickArrow}>
+								<Link to={"/work/" + tabWork[indexId + 1]}>
+									<p>Suivant</p>
+									<img src={Right} alt="fleche de droite" />
+								</Link>
+							</div>
 						) : (
 							<div></div>
 						)}
