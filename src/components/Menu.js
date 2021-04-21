@@ -1,10 +1,13 @@
 import React from "react";
 // Navigation
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 // image
 import Logo from "../img/nicaux.svg";
 
 const Menu = () => {
+	const location = useLocation();
+	const { pathname } = location;
+	console.log(pathname);
 	return (
 		<div className="menu">
 			<a href="/">
@@ -12,13 +15,13 @@ const Menu = () => {
 			</a>
 			<nav>
 				<ul>
-					<li>
+					<li className={pathname === "/" ? "colorMenu" : ""}>
 						<Link to="/">Works</Link>
 					</li>
-					<li>
+					<li className={pathname === "/about" ? "colorMenu" : ""}>
 						<Link to="/about">About</Link>
 					</li>
-					<li>
+					<li className={pathname === "/contact" ? "colorMenu" : ""}>
 						<Link to="/contact">Contact</Link>
 					</li>
 				</ul>
