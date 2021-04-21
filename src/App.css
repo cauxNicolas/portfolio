@@ -112,6 +112,11 @@ nav a {
 
 div.menu > a {
 	margin-bottom: 100px;
+	height: 15%;
+}
+
+.menu nav {
+	height: 63%;
 }
 
 .menu nav a {
@@ -143,6 +148,13 @@ div.menu > a {
 	color: black;
 }
 .grey {
+	color: grey;
+}
+
+.copyright {
+	text-align: center;
+	font-size: 0.75rem;
+	line-height: 1rem;
 	color: grey;
 }
 

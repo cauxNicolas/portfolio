@@ -26,6 +26,10 @@ const Menu = () => {
 					</li>
 				</ul>
 			</nav>
+			<div className="copyright">
+				<p>&copy; {new Date().getFullYear()} build by nicaux</p>
+				<p>React Js</p>
+			</div>
 		</div>
 	);
 };
