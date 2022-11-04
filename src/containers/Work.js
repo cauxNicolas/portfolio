@@ -20,7 +20,7 @@ const Work = ({ works }) => {
 	useEffect(() => {
 		const fetchData = async () => {
 			const response = await axios.get(
-				"https://portfolio-client-nicaux.herokuapp.com" + `/work/${id}`
+				"https://portfolio-back-phi.vercel.app" + `/work/${id}`
 			);
 			setWork(response.data);
 			setIsLoading(true);
@@ -87,9 +87,7 @@ const Work = ({ works }) => {
 					<div className="width-skill-desc">
 						<div className="description">
 							<h1>{work.content.title}</h1>
-							<p className="desc-textarea">
-								{work.content.description}
-							</p>
+							<p className="desc-textarea">{work.content.description}</p>
 						</div>
 						<div className="skills">
 							{work.content.skills.map((skill, index) => {

@@ -24,7 +24,7 @@ function App() {
 	useEffect(() => {
 		const fetchData = async () => {
 			const response = await axios.get(
-				"https://portfolio-client-nicaux.herokuapp.com"
+				"https://portfolio-back-phi.vercel.app/"
 			);
 			setWorks(response.data);
 		};

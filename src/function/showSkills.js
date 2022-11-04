@@ -16,6 +16,9 @@ import Stripe from "../img/stripe.svg";
 import Cloudinary from "../img/cloudinary.svg";
 //import Express from "../img/express.svg";
 //import Axios from "../img/axios.svg";
+import NextJs from "../img/nextjs.svg";
+import Tailwind from "../img/tailwind.svg";
+import Vercel from "../img/vercel.svg";
 import MongoDB from "../img/mongoDB.svg";
 
 const showSkills = (skill) => {
@@ -138,6 +141,24 @@ const showSkills = (skill) => {
 			return (
 				<>
 					<img src={MongoDB} alt="logo mongoDB" />
+				</>
+			);
+		case "NextJs":
+			return (
+				<>
+					<img src={NextJs} alt="logo nextJs" />
+				</>
+			);
+		case "Tailwind":
+			return (
+				<>
+					<img src={Tailwind} alt="logo tailwind" />
+				</>
+			);
+		case "Vercel":
+			return (
+				<>
+					<img src={Vercel} alt="logo vercel" />
 				</>
 			);
 		default:
